@@ -1,5 +1,4 @@
-ticTacToe_v3.py
-
+# ticTacToe.py
 
 class Player:
     def __init__(self, name):
