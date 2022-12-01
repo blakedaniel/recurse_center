@@ -1,6 +1,5 @@
 # CracklePop.py
 
-
 def snapCracklePop():
     for num in range(1, 101):
         if num % 15 == 0:
@@ -11,8 +10,5 @@ def snapCracklePop():
             print("Crackle")
         else:
             print(num)
-
-
-int()
 
 snapCracklePop()
