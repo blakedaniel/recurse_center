@@ -138,4 +138,4 @@ if __name__ == '__main__':
         game.checkendgame()
         game.playerswitch()
 else:
-    print('Executed when imported')
+    print('TicTacToe has be executed when imported and may not work properly')
