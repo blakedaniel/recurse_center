@@ -18,7 +18,7 @@ class Player:
                     self.placement = int(self.placement)
                     return
                 case _:
-                    error_msg = 'Placement must be an available integer 1- 9. Please try again.'
+                    error_msg = 'Placement must be an available integer 1 - 9. Please try again.'
                     print(error_msg)
 
 
@@ -30,6 +30,7 @@ class Game:
         self.current_player = self.player_x
 
         # all main placement sets/dictionaries
+        # Played, available , and current are empty at start
         self.starting_placements = set(range(1, 10))
         self.played_placements = self.player_x.placements.union(self.player_o.placements)
         self.available_placements = self.starting_placements.difference(self.played_placements)
@@ -98,7 +99,7 @@ class Game:
             if self.current_player.placement == 'QUIT':
                 break
             elif self.current_player.placement not in self.current_placements.values():
-                print('Placement must be an available integer 1- 9. Please try again.')
+                print('Placement must be an available integer 1 - 9. Please try again.')
             else:
                 self.current_player.placements.add(self.current_player.placement)
                 self.current_placements[self.current_player.placement] = self.current_player.name
