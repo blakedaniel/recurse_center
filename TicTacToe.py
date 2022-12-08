@@ -1,4 +1,5 @@
 # ticTacToe.py
+import random
 
 class Player:
     def __init__(self, name):
@@ -9,17 +10,22 @@ class Player:
     # player chooses, can add AI/computer coding here
     def choose(self):
         print('\n' + 'To quit game, enter QUIT')
-        while True:
-            self.placement = input(self.name + ', pick your placement! ')
-            match self.placement:
-                case 'QUIT':
-                    break
-                case _ as num if (int(num) >= 1) and (int(num) <= 9):
-                    self.placement = int(self.placement)
-                    return
-                case _:
-                    error_msg = 'Placement must be an available integer 1 - 9. Please try again.'
-                    print(error_msg)
+        if self.name == 'x':
+            while True:
+                self.placement = input(self.name + ', pick your placement! ')
+                match self.placement:
+                    case 'QUIT':
+                        break
+                    case _ as num if (int(num) >= 1) and (int(num) <= 9):
+                        self.placement = int(self.placement)
+                        return
+                    case _:
+                        error_msg = 'Placement must be an available integer 1 - 9. Please try again.'
+                        print(error_msg)
+        else:
+            min_ = min(game.available_placements)
+            max_ = max(game.available_placements)
+            self.placement = random.randrange(start=min_, stop=max_ + 1)
 
 
 class Game:
